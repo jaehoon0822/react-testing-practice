@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: ./dockerFiles/Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
+  test:
+    build:
+      context: .
+      dockerfile: ./dockerFiles/Dockerfile.test
+    volumes:
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
