@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import App from "./App";
+import App, { replaceCamelWithSpaces } from "./App";
 
 test("button has correct initial button", () => {
   render(<App />);
@@ -45,7 +45,7 @@ test("checkbox 첫번째 클릭시 button disabled, 두번째 클릭시 button e
   const colorButton = screen.getByRole("button", { name: "change to blue" });
 
   const checkbox = screen.getByRole("checkbox", {
-    name: "desable-btn",
+    name: "disable button",
   });
 
   fireEvent.click(checkbox);
@@ -53,4 +53,32 @@ test("checkbox 첫번째 클릭시 button disabled, 두번째 클릭시 button e
 
   fireEvent.click(checkbox);
   expect(colorButton).toBeEnabled();
+});
+
+test("checkbox 클릭시 색상 gray 로 변경", () => {
+  render(<App />);
+
+  const colorButton = screen.getByRole("button", { name: "change to blue" });
+
+  const checkbox = screen.getByRole("checkbox", { name: "disable button" });
+
+  fireEvent.click(checkbox);
+
+  expect(colorButton).toHaveStyle({
+    "background-color": "gray",
+  });
+});
+
+describe("spaces before camel-case capital letters", () => {
+  test("Works for no inner capital letters", () => {
+    expect(replaceCamelWithSpaces("Red")).toBe("Red");
+  });
+
+  test("Works for one inner capital letter", () => {
+    expect(replaceCamelWithSpaces("MidnightBlue")).toBe("Midnight Blue");
+  });
+
+  test("Works for mulitple inner capital letters", () => {
+    expect(replaceCamelWithSpaces("MidiumVioletRed")).toBe("Midium Violet Red");
+  });
 });
