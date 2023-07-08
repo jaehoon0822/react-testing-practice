@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  front:
+    build:
+      context: '.'
+      dockerfile: './dockerFiles/front/Dockerfile.dev'
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front:/usr/src/app
+      - ./front/node_modules:/usr/src/app/node_modules
+  server:
+    build:
+      context: '.'
+      dockerfile: './dockerFiles/server/Dockerfile.dev'
+    ports:
+      - 8080:3030
+    volumes:
+      - ./server:/usr/src/app
+      - ./server/node_modules:/usr/src/app/node_modules

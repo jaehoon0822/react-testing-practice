@@ -7,10 +7,10 @@ export function replaceCamelWithSpaces(colorName: string) {
 
 function App() {
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
-  const [buttonColor, setButtonColor] = useState<String>("blue");
+  const [buttonColor, setButtonColor] = useState<String>("MidnightBlue");
 
   const buttonStyle: React.CSSProperties = useMemo(() => {
-    const bgColor = buttonColor === "red" ? "blue" : "red";
+    const bgColor = buttonColor === "red" ? "MidnightBlue" : "red";
 
     return {
       backgroundColor: isDisabled ? "gray" : bgColor,
@@ -23,7 +23,7 @@ function App() {
   };
 
   const onClickButton = () => {
-    setButtonColor((prev) => (prev === "red" ? "blue" : "red"));
+    setButtonColor((prev) => (prev === "red" ? "MidnightBlue" : "red"));
   };
 
   return (
