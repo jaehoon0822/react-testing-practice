@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToDoItem /> redners component correctly 1`] = `
+<div>
+  <div
+    class="css-1vx15jt"
+    data-testid="toDoItem"
+  >
+    <span
+      class="css-fz98bf"
+    >
+      default value
+    </span>
+    <div
+      class="css-as8hdz"
+      data-testid="container"
+    >
+      <div
+        class="css-68lwrs"
+      >
+        삭제
+      </div>
+    </div>
+  </div>
+</div>
+`;

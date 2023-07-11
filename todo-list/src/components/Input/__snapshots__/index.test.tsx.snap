@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> redners component correctly 1`] = `
+<div>
+  <input
+    class="css-1bns2mu"
+    name="test"
+    type="text"
+    value="test"
+  />
+</div>
+`;

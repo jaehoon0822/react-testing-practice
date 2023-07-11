@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ContainerProps } from './button.types';
+import { ContainerProps } from './Button.types';
 
 export const Container = styled.div<ContainerProps>`
   text-align: center;
